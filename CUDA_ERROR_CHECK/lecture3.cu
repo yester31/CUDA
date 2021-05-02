@@ -1,4 +1,4 @@
-// 2020-5-13 by YH 
+// 2020-5-13 by YH test
 
 #include <cstdio>
 #include "cuda_runtime.h"
