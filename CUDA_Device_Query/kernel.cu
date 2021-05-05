@@ -14,7 +14,7 @@
   // std::system includes
 
 #include <cuda_runtime.h>
-#include "E:\APPL\CUDA10.1\sample\common\inc\helper_cuda.h"
+#include "helper_cuda.h"
 
 #include <iostream>
 #include <memory>
