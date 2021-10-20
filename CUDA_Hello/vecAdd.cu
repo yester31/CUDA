@@ -92,10 +92,6 @@ int main(void) {
 	uint64_t total_time2 = duration_cast<microseconds>(system_clock::now().time_since_epoch()).count() - start_time3;
 	printf("dur_time(cpu) = %6.3f [msec] \n", total_time2 / 1000.f);
 
-
-
 	cudaFree(d_a); cudaFree(d_b); cudaFree(d_c);
 	delete[] a;	delete[] b;	delete[] c;
-
-
 }

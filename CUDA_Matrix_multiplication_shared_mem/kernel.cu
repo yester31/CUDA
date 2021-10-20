@@ -19,8 +19,10 @@ __global__ void matmul(float* g_C, const float* g_A, const float* g_B, const int
 	//c[y * WIDTH + x] = sum_ka[y * WIDTH + k] * b[k * WIDTH + x]
 	__shared__ float s_A[TILE_WIDTH][TILE_WIDTH];
 	__shared__ float s_B[TILE_WIDTH][TILE_WIDTH];
-	int by = blockIdx.y; int bx = blockIdx.x;
-	int ty = threadIdx.y; int tx = threadIdx.x;
+	int by = blockIdx.y; 
+	int bx = blockIdx.x;
+	int ty = threadIdx.y; 
+	int tx = threadIdx.x;
 	int gy = by * TILE_WIDTH + ty; // global y index
 	int gx = bx * TILE_WIDTH + tx; // global x index
 	float sum = 0.0F;

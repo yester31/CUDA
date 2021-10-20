@@ -5,7 +5,7 @@
 #include <cstdio>
 #include <cuda.h>
 #include <cuda_runtime_api.h>
-#include "E:\APPL\CUDA10.1\include\device_functions.h"
+#include "F:\APP\CUDA11.1\include\device_functions.h"
 
 // ERROR CHECK
 

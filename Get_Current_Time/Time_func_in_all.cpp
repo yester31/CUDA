@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <windows.h>
 
-using namespace chrono;
 using namespace std;
+using namespace chrono;
 
 int main(void) {
 	system_clock::time_point start = system_clock::now();

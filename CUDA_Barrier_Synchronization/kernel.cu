@@ -60,4 +60,4 @@ __global__ void adj(int* result, int* input) {
 }
 // pass the size of the per-block array, in bytes, as the third
 // argument to the triple chevrons
-adj <<<num_blocks, block_size, block_size * sizeof(int)>>>(r,i)// block 사이즈 만큼 int 변수들이 배열로 잡힌다.
+adj <<<num_blocks, block_size, block_size * sizeof(int)>>>(r,i);// block 사이즈 만큼 int 변수들이 배열로 잡힌다.
