@@ -9,7 +9,7 @@
 
 texture<float, 2, cudaReadModeElementType> tex;
 
-__global__ void kernel()
+__global__ void kernel_tex2D()
 {
 	int x = blockIdx.x * blockDim.x + threadIdx.x;
 	int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -25,7 +25,7 @@ int main() {
 
 	dim3 dimGrid(1, 1, 1);
 	dim3 dimBlock(W, H, 1);
-	kernel << <dimGrid, dimBlock >> > ();
+	kernel_tex2D << <dimGrid, dimBlock >> > ();
 	cudaUnbindTexture(tex);
 	cudaFree(buffer);
 

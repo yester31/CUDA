@@ -1,6 +1,5 @@
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,7 +19,7 @@ __global__ void vecAdd(int *_a, int *_b, int *_c) {
 
 int main(void) {
 
-	//start the timer
+	// start the timer
 	uint64_t total_time = 0;
 
 	// 포인터 변수 선언
@@ -36,6 +35,7 @@ int main(void) {
 	b = new int[NUM_DATA]; memset(b, 0, memSize); 
 	c = new int[NUM_DATA]; memset(c, 0, memSize);
 
+	// 할당한 메모리 공간에 연산에 사용할 데이터 할당
 	for (int i = 0; i < NUM_DATA; i++) {
 		a[i] = rand() % 10;
 		b[i] = rand() % 10;
@@ -49,7 +49,7 @@ int main(void) {
 	uint64_t start_time = duration_cast<microseconds>(system_clock::now().time_since_epoch()).count();
 
 	// Host -> Device 데이터 전달 (data transfer overhead)
-	cudaMemcpy(d_a, a, memSize, cudaMemcpyHostToDevice); // 동기로 작동함. 
+	cudaMemcpy(d_a, a, memSize, cudaMemcpyHostToDevice); // 동기로 작동함.
 	cudaMemcpy(d_b, b, memSize, cudaMemcpyHostToDevice);
 	
 	dim3 block(BLOCK_SIZE);
